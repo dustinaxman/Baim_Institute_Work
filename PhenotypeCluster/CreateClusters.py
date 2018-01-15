@@ -60,11 +60,7 @@ def plot_label_color(x1,x2,labeling):
 
 #%%
 df=pd.read_csv("/Users/deaxman/Projects/DATA/General/titanic.csv")
-
 df=df.drop(['name', 'cabin','ticket'], axis=1).dropna(axis=0,how='any')  
-
-
-gamma=0.1
 forced_column_type_assignment={'survived':'nominal',
                                'pclass':'nominal',
                                'sex':'nominal',
@@ -74,6 +70,7 @@ forced_column_type_assignment={'survived':'nominal',
                                'fare':'numeric',
                                'embarked':'nominal'}
 
+gamma=0.1
 
 #%% Normalize non-nominal columns
 for feature in list(df.columns.values):
